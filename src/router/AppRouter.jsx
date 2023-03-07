@@ -11,14 +11,14 @@ import { GlobalStyles } from '../styles/Global.styles'
 import PrivateRouter from './PrivateRouter'
 
 const AppRouter = () => {
-  const [currentUser, setCurrentUser] = useState(false)
+  const [currentUser, setCurrentUser] = useState(sessionStorage.getItem("user") || false)
   return (
    <BrowserRouter>
-   <Navbar/>
+   <Navbar currentUser={currentUser} setCurrentUser={setCurrentUser}/>
    <GlobalStyles/>
    <Routes>
     <Route path="/" element={<Home/>}/>
-    <Route path="/login" element={<Login/>}/>
+    <Route path="/login" element={<Login setCurrentUser={setCurrentUser}/>}/>
     <Route path="/register" element={<Register/>}/> 
 
     {/* <Route path="/about" element={<PrivateRouter/>}>

@@ -1,9 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FormContainer, Header, LoginContainer, StyledButton, StyledForm, StyledInput } from './Login.style'
 
-const Login = () => {
+const Login = ({setCurrentUser}) => {
+  const navigate = useNavigate()
   const handleSubmit=(e)=>{
    e.preventDefault()
+   setCurrentUser("hümeyra")
+   sessionStorage.setItem("user","hümeyra")
+   navigate(-1)
+
   }
   return (
     <LoginContainer>

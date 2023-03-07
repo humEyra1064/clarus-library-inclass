@@ -21,6 +21,8 @@ export const Menu = styled(Flex)`
     flex-direction: column;
     width:100%;
     transition: all 0.3s ease-in;
+    max-height:${({showMenu})=>showMenu ? "300px" : "0"};
+    overflow: hidden;
 
 }
 `;

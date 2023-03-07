@@ -6,7 +6,7 @@ import { theme } from './styles/theme';
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles/>
+      {/* <GlobalStyles/> */}
       <AppRouter/>
     </ThemeProvider>
   );

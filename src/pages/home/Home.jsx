@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../../components/header/Header'
-import { HomeContainer, HomeImg } from './Home.style'
+import { HomeContainer, HomeImg, MainContainer } from './Home.style'
 import homeImg from "../../assets/books.jpg";
 
 const Home = () => {
@@ -10,6 +10,9 @@ const Home = () => {
 <HomeImg>
   <img src={homeImg} alt="" />
 </HomeImg>
+<MainContainer>
+  
+</MainContainer>
 
 
     </HomeContainer>

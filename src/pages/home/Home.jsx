@@ -1,17 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../components/header/Header'
 import { HomeContainer, HomeImg, MainContainer } from './Home.style'
 import homeImg from "../../assets/books.jpg";
+import axios from "axios";
 
 const Home = () => {
+  const [query, setQuery] = useState("");
+  const [selectType, setSelectType] = useState("all");
+  const [myData, setMyData] = useState([]);
+  const APP_KEY = process.env.REACT_APP_apiKey;
+
+  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=${selectType}&key=${APP_KEY}`;
+
+  const getData = async () => {
+    try {
+      const { data } = await axios.get(url);
+      console.log(data);
+      setMyData(data.items);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <HomeContainer>
-<Header/>
+<Header
+  setQuery={setQuery}
+  setSelectType={setSelectType}
+ 
+
+/>
 <HomeImg>
   <img src={homeImg} alt="" />
 </HomeImg>
 <MainContainer>
-  
+
 </MainContainer>
 
 

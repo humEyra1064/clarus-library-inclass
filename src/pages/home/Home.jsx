@@ -10,7 +10,7 @@ const Home = () => {
   const [myData, setMyData] = useState([]);
   const APP_KEY = process.env.REACT_APP_apiKey;
 
-  const url = `https://www.googleapis.com/books/v1/volumes?q=${query}&printType=${selectType}&key=${APP_KEY}`;
+  const url =`https://www.googleapis.com/books/v1/volumes?q=${query}&printType=${selectType}&key=${APP_KEY}`;
 
   const getData = async () => {
     try {
@@ -28,17 +28,21 @@ const Home = () => {
 <Header
   setQuery={setQuery}
   setSelectType={setSelectType}
+  getData={getData}
  
 
 />
-<HomeImg>
-  <img src={homeImg} alt="" />
-</HomeImg>
-<MainContainer>
-
-</MainContainer>
-
-
+{!myData.length ? (
+        <HomeImg>
+          <img src={homeImg} alt="home" />
+        </HomeImg>
+      ) : (
+        <MainContainer wrap="wrap">
+          {/* {
+            myData.map((item)=> <Card key={item.id} item={item} />)
+          } */}
+        </MainContainer>
+      )}
     </HomeContainer>
   )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { AboutContainer, IconContainer, InfoContainer, ProfileImg } from './About.style'
-import profile from "../../assets/about.png"
+import profile from "../../assets/emoji.png"
 import Icon from '../../components/icon/Icon';
 import { iconData } from '../../helper/iconData';
 
@@ -9,7 +9,7 @@ const About = () => {
     <AboutContainer>
       <ProfileImg src={profile} alt="anthony" />
       <InfoContainer>
-        <h2>Hi, I'm Anthony</h2>
+        <h2>Hi, I'm Hümeyra</h2>
         <h3>I’m currently learning Full-Stack Development Languages.</h3>
         <h4>
           I've already known JS, ReactJS, NextJs, ReactNative, Django, NodeJS,
